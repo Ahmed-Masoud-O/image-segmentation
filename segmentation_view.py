@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from PIL import Image
-import scipy.io
+from helper import load_image
 
 
 def get_segment(bounds_array, original_img):
@@ -15,16 +14,9 @@ def get_segment(bounds_array, original_img):
     return segmented_image
 
 
-def load_image(image_name='2092'):
-    img = Image.open('BSR/BSDS500/data/images/train/'+image_name+'.jpg')
-    img.show()
-    mat = scipy.io.loadmat('BSR/BSDS500/data/groundTruth/train/'+image_name+'.mat')
-    ground_truth = mat['groundTruth']
-    return ground_truth, img
-
-
 def show_segment(image_name='2092'):
     ground_truth, img = load_image(image_name)
+    img.show()
     for i in range(ground_truth.shape[1]):
         segment = ground_truth[0, i]
         bound = segment[0, 0][1]
