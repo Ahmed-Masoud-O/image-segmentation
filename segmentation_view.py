@@ -25,4 +25,4 @@ def show_segment(image_name='2092'):
         plt.imshow(segmented_image)
     plt.show()
 
-show_segment('8049')
+show_segment('183087')

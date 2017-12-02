@@ -1,1 +1,6 @@
 BSR
+__pycache__
+.idea
+k_means_outputs
+knn_outputs
+rbf_outputs
